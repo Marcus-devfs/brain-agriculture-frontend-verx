@@ -43,9 +43,8 @@ Validações de formulário robustas com feedback ao usuário
 🔧 Backend
 
 O backend está hospedado em uma instância Amazon EC2, rodando via Docker e disponível na porta 3000 no IP:
-http://<IP-EXEMPLO>:3000
+http://52.87.237.21:3000
 
-Exemplo: http://18.222.33.44:3000
 A API RESTful está configurada para ser consumida pela aplicação frontend.
 
 📦 Como rodar o projeto localmente
