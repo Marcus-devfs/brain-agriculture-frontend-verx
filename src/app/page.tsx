@@ -4,11 +4,24 @@ import { useEffect, useState } from 'react'
 import { PieChart, Pie, Cell, Legend, Tooltip } from 'recharts'
 import { getDashboardData } from './services/dashboardService'
 
+interface DashboardData {
+  totalPropostas: number;
+  totalFazendas: number;
+  totalHectares: number;
+  porEstado: Record<string, number>;
+  porCultivo: Record<string, number>;
+  usoSolo: {
+    agriculturavel: number;
+    vegetacao: number;
+  };
+}
+
+
 const COLORS = ['#F2008A', '#FFC0CB', '#FF69B4', '#F2F2F2']
 
 export default function DashboardPage() {
   const [loading, setLoading] = useState(true)
-  const [data, setData] = useState<any>(null)
+  const [data, setData] = useState<DashboardData | null>(null)
 
   useEffect(() => {
     const fetch = async () => {

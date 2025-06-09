@@ -7,6 +7,7 @@ import { zodResolver } from '@hookform/resolvers/zod'
 import { useParams, useRouter } from 'next/navigation'
 import { getProposal, updateProposal } from '@/app/services/proposalsService'
 import CultivoSelector from '@/app/components/organisms/Selector'
+import { Proposal } from '@/app/types'
 
 const schema = z.object({
   nomeProdutor: z.string(),
@@ -20,7 +21,7 @@ const schema = z.object({
   valorProposta: z.coerce.number(),
 })
 
-type FormData = z.infer<typeof schema>
+export type FormData = z.infer<typeof schema>
 
 export default function EditProposalPage() {
   const { id } = useParams()
@@ -59,7 +60,20 @@ export default function EditProposalPage() {
   }, [id, setValue])
 
   const onSubmit = async (data: FormData) => {
-    const response = await updateProposal(Number(id), data)
+    const proposalData: Proposal = {
+      id: Number(id),
+      nomeProdutor: data.nomeProdutor,
+      cpf: data.cpf,
+      nomeFazenda: data.nomeFazenda,
+      cidade: data.cidade,
+      estado: data.estado,
+      areaAgricultavel: data.areaAgricultavel,
+      areaVegetacao: data.areaVegetacao,
+      tipoCultivo: data.tipoCultivo,
+      valorProposta: data.valorProposta,
+    }
+
+    const response = await updateProposal(Number(id), proposalData)
     if (response.status !== 200) {
       alert('Erro ao atualizar proposta')
       return

@@ -6,6 +6,7 @@ import { z } from 'zod'
 import CultivoSelector from '@/app/components/organisms/Selector'
 import { createProposal } from '@/app/services/proposalsService'
 import { useRouter } from 'next/navigation'
+import { NewProposal } from '@/app/types'
 
 const schema = z.object({
   nomeProdutor: z.string().min(1, 'Obrigatório'),
@@ -32,7 +33,18 @@ export default function NewProposalPage() {
 
   const onSubmit = async (data: FormData) => {
     try {
-      const result = await createProposal(data)
+      const proposalData: NewProposal = {
+        nomeProdutor: data.nomeProdutor,
+        cpf: data.cpf,
+        nomeFazenda: data.nomeFazenda,
+        cidade: data.cidade,
+        estado: data.estado,
+        areaAgricultavel: data.areaAgricultavel,
+        areaVegetacao: data.areaVegetacao,
+        tipoCultivo: data.tipoCultivo,
+        valorProposta: data.valorProposta,
+      }
+      const result = await createProposal(proposalData)
       if(result.status === 201) {
         alert('Proposta criada com sucesso')
         return router.push('/proposals')

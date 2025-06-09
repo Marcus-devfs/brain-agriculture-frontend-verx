@@ -1,7 +1,7 @@
 'use client';
 
 import CreatableSelect from 'react-select/creatable';
-import type { MultiValue, ActionMeta } from 'react-select';
+import type { MultiValue } from 'react-select';
 
 type Option = { label: string; value: string };
 
@@ -15,7 +15,6 @@ export default function CultivoSelector({ value, onChange }: CultivoSelectorProp
 
   const handleChange = (
     newValue: MultiValue<Option>,
-    actionMeta: ActionMeta<Option>
   ) => {
     onChange(newValue.map(o => o.value));
   };

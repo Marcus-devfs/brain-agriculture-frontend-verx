@@ -3,19 +3,9 @@
 
 import { useCallback, useEffect, useState } from 'react'
 import { listProposals } from '../services/proposalsService'
+import { Proposal } from '../types'
 
-export type Proposal = {
-    id: number
-    nomeProdutor: string
-    cpf: string
-    nomeFazenda: string
-    cidade: string
-    estado: string
-    areaAgricultavel: number
-    areaVegetacao: number
-    tipoCultivo: string
-    valorProposta: number
-}
+
 
 export function useProposals() {
     const [proposals, setProposals] = useState<Proposal[]>([])
