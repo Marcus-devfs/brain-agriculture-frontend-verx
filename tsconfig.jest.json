@@ -1,0 +1,14 @@
+{
+    "extends": "./tsconfig.json",
+    "compilerOptions": {
+      "jsx": "react-jsx", // transforma o JSX corretamente para Jest
+      "module": "commonjs", // Jest não lida bem com ESNext + ESM
+      "noEmit": true,
+      "baseUrl": ".",
+      "paths": {
+        "@/*": ["src/app/*"]
+      }
+    },
+    "include": ["**/*.ts", "**/*.tsx"]
+  }
+  
