@@ -58,8 +58,8 @@ export default function NewProposalPage() {
   }
 
   return (
-    <div>
-      <h2 className="text-2xl font-bold text-serasa-pink mb-4">Nova Proposta</h2>
+    <div className="py-24 px-16 ">
+      <h2 className="text-2xl font-bold mb-4">Nova Proposta</h2>
       <form onSubmit={handleSubmit(onSubmit)} className="space-y-4 bg-white p-6 rounded shadow">
         {[
           ['nomeProdutor', 'Nome do Produtor'],
@@ -84,7 +84,6 @@ export default function NewProposalPage() {
           </div>
         ))}
 
-        {/* Campo especial para tipoCultivo */}
         <div>
           <label className="block font-medium mb-1" htmlFor="tipoCultivo">
             Tipo de Cultivo

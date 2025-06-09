@@ -84,7 +84,7 @@ export default function EditProposalPage() {
   }
 
   return (
-    <div>
+    <div className="py-24 px-16">
       <h2 className="text-2xl font-bold text-serasa-pink mb-4">Editar Proposta</h2>
       <form onSubmit={handleSubmit(onSubmit)} className="space-y-4 bg-white p-6 rounded shadow">
         {[
