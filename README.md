@@ -1,36 +1,100 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+Brain Agriculture - Frontend
 
-## Getting Started
 
-First, run the development server:
 
-```bash
+Aplicação frontend para gerenciamento de propostas de crédito rural, parte do desafio técnico para a Brain Agriculture.
+🚀 Sobre o projeto
+
+Este projeto é uma aplicação web frontend desenvolvida em React com Next.js, que consome uma API RESTful para cadastro, listagem, edição e exclusão de propostas de crédito rural.
+O sistema possui:
+
+Dashboard geral com indicadores e gráficos para visualização rápida dos dados.
+Página de listagem de propostas com filtros e navegação.
+Página para adicionar novas propostas com validações.
+Utilização de bibliotecas modernas para formulários, gráficos e UI.
+🛠️ Tecnologias utilizadas
+
+React
+Next.js
+TypeScript
+React Hook Form (formulários e validação)
+Zod (validação de dados)
+Recharts (gráficos)
+Axios (requisições HTTP)
+Tailwind CSS (estilização)
+Jest + React Testing Library (testes)
+📋 Funcionalidades
+
+Cadastro de propostas de crédito rural com os campos:
+Nome do produtor
+CPF
+Nome da fazenda
+Cidade
+Estado
+Área total (calculada automaticamente)
+Área agricultável
+Área de vegetação
+Tipo de cultivo
+Valor da proposta
+Listagem paginada e filtrável das propostas
+Edição e exclusão de propostas existentes
+Dashboard com gráficos e indicadores baseados nas propostas cadastradas
+Validações de formulário robustas com feedback ao usuário
+🔧 Backend
+
+O backend está hospedado em uma instância Amazon EC2, rodando via Docker e disponível na porta 3000 no IP:
+http://<IP-EXEMPLO>:3000
+
+Exemplo: http://18.222.33.44:3000
+A API RESTful está configurada para ser consumida pela aplicação frontend.
+
+📦 Como rodar o projeto localmente
+
+Pré-requisitos
+Node.js v18 ou superior
+npm ou yarn
+Backend rodando e acessível (ex: na EC2 com Docker)
+Passos
+Clone o repositório:
+git clone https://github.com/Marcus-devfs/brain-agriculture-frontend-verx.git
+cd brain-agriculture-frontend-verx
+
+Instale as dependências:
+npm install
+
+ou
+
+yarn install
+
+Configure a URL da API no arquivo .env.local (exemplo):
+NEXT_PUBLIC_API_URL=http://<IP-EXEMPLO>:3000/api
+
+Execute a aplicação em modo desenvolvimento:
 npm run dev
-# or
+
+ou
+
 yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Acesse em http://localhost:3000
+🧪 Testes
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Para rodar os testes unitários e de integração:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+npm run test
 
-## Learn More
+ou
 
-To learn more about Next.js, take a look at the following resources:
+yarn test
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+📍 Deploy
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+O projeto está hospedado no Vercel e pode ser acessado em:
 
-## Deploy on Vercel
+https://brain-agriculture-frontend.vercel-verx.app
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+📝 Considerações finais
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Este frontend faz parte do desafio técnico para a vaga de Desenvolvedor(a) Fullstack na Brain Agriculture, contemplando as funcionalidades solicitadas e buscando um código limpo e organizado.
+Qualquer dúvida ou sugestão, estou à disposição!
+
