@@ -43,7 +43,7 @@ Validações de formulário robustas com feedback ao usuário
 🔧 Backend
 
 O backend está hospedado em uma instância Amazon EC2, rodando via Docker e disponível na porta 3000 no IP:
-http://52.87.237.21:3000
+https://brain-agriculture-backend.duckdns.org
 
 A API RESTful está configurada para ser consumida pela aplicação frontend.
 
@@ -90,7 +90,7 @@ yarn test
 
 O projeto está hospedado no Vercel e pode ser acessado em:
 
-https://brain-agriculture-frontend.vercel-verx.app
+https://brain-agriculture-frontend-verx.vercel.app
 
 📝 Considerações finais
 
